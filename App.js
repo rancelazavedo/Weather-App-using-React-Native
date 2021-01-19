@@ -16,7 +16,7 @@ import {
 const Dev_Height = Dimensions.get("window").height
 const Dev_Width = Dimensions.get("window").width
 const api = {
-  key: "40b162fb48005b043b26169fe6e2590e",
+  key: "apikey",
   base: "https://api.openweathermap.org/data/2.5/"
 }
 let today = new Date().toDateString()
@@ -45,7 +45,7 @@ export default class App extends React.Component{
   }
 
   fetch_weather=()=> {
-    fetch('http://api.openweathermap.org/data/2.5/weather?q='+this.state.city+'&appid=40b162fb48005b043b26169fe6e2590e')
+    fetch('http://api.openweathermap.org/data/2.5/weather?q='+this.state.city+'&appid=apikey')
       .then((response) => response.json())
       .then((json) => {
         this.setState({ data: json });
